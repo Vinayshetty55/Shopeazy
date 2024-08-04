@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  mat-card {
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  mat-card-title {
+    text-align: center;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  
+    .mat-form-field-underline {
+      &.mat-focused {
+        border-color: #2196f3;
+      }
+    }
+  
+    .mat-form-field-label {
+      color: #2196f3; 
+    }
+  }
+  
+  mat-error {
+    font-size: 12px;
+    color: #f44336; 
+  }
+  
+  mat-card-actions {
+    display: flex;
+    justify-content: center;
+  }
+  
+  button[mat-button] {
+    color: #2196f3; 
+  }

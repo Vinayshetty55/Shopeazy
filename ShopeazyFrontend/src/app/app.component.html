@@ -1,0 +1,46 @@
+<!-- <mat-toolbar color="blue" class="navbar">
+  <span class="navbar-brand">Shop Eazy</span>
+  <span class="spacer"></span>
+  <button mat-button routerLink="/order" routerLinkActive="active">Track Order</button>
+  <button mat-button routerLink="/signup" routerLinkActive="active">Sign Up</button>
+  <button mat-button routerLink="/login" routerLinkActive="active">Login</button>
+</mat-toolbar> -->
+<div *ngIf="!isAdminLogIn && !isCustomerLogIn">
+  <mat-toolbar class="bg-blue-500 p-2">
+    <span class="text-white text-2xl font-bold">Shop Eazy</span>
+    <span class="flex-grow"></span>
+    <button mat-button routerLink="/order" routerLinkActive="active" class="text-blue">Track Order</button>
+    <button mat-button routerLink="/signup" routerLinkActive="active" class="text-blue">Register</button>
+    <button mat-button routerLink="/login" routerLinkActive="active" class="text-blue">Login</button>
+  </mat-toolbar>
+</div>
+
+<div *ngIf="isAdminLogIn">
+  <mat-toolbar class="bg-blue-500 p-2">
+    <span class="text-white text-2xl font-bold">Shop Eazy</span>
+    <span class="flex-grow"></span>
+    <button mat-button routerLink="/admin/dashboard" routerLinkActive="active" class="text-blue">Dashboard</button>
+    <button mat-button routerLink="/admin/analytics" routerLinkActive="active" class="text-blue">Analytics</button>
+    <button mat-button routerLink="/admin/category" routerLinkActive="active" class="text-blue">Category</button>
+    <button mat-button routerLink="/admin/products" routerLinkActive="active" class="text-blue">Products</button>
+    <button mat-button routerLink="/admin/orders" routerLinkActive="active" class="text-blue">Orders</button>
+    <button mat-button routerLink="/admin/postCupons" routerLinkActive="active" class="text-blue">Post Cupons</button>
+    <button mat-button routerLink="/admin/cupons" routerLinkActive="active" class="text-blue">Cupons</button>
+    <button routerLinkActive="active" (click)="logout()" class="text-blue">Logout</button>
+  </mat-toolbar>
+</div>
+
+<div *ngIf="isCustomerLogIn">
+  <mat-toolbar class="bg-blue-500 p-2">
+    <span class="text-white text-2xl font-bold">Shop Eazy</span>
+    <span class="flex-grow"></span>
+    <button mat-button routerLink="/customer/dashboard" routerLinkActive="active" class="text-blue">Dashboard</button>
+    <button mat-button routerLink="/customer/cart" routerLinkActive="active" class="text-blue">Cart</button>
+    <button mat-button routerLink="/customer/myOrders" routerLinkActive="active" class="text-blue">My Orders</button>
+    <button mat-button routerLink="/customer/wishlist" routerLinkActive="active" class="text-blue">WishList</button>
+    <button mat-button routerLink="/customer/profile" routerLinkActive="active" class="text-blue">Profile</button>
+    <button routerLinkActive="active" (click)="logout()" class="text-blue">Logout</button>
+  </mat-toolbar>
+</div>
+
+<router-outlet></router-outlet>
